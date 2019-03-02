@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>cn.justquiet.www</display-name>
+  <welcome-file-list>
+  	<welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 字符过滤器 -->
+	<filter>
+		<filter-name>encode</filter-name>
+		<filter-class>cn.justquiet.Filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+  
+  
+  
+  
+  	<servlet>
+		<servlet-name>determine</servlet-name>
+		<servlet-class>cn.justquiet.Controller.InitPerson</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>determine</servlet-name>
+		<url-pattern>/determine</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>obligatory</servlet-name>
+		<servlet-class>cn.justquiet.Controller.InitTask</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>obligatory</servlet-name>
+		<url-pattern>/obligatory</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>gather</servlet-name>
+		<servlet-class>cn.justquiet.Controller.InitGather</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>gather</servlet-name>
+		<url-pattern>/gather</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>exit</servlet-name>
+		<servlet-class>cn.justquiet.Controller.ExitSystem</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exit</servlet-name>
+		<url-pattern>/exit</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>handleQuestion</servlet-name>
+		<servlet-class>cn.justquiet.Controller.HandleQuestion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handleQuestion</servlet-name>
+		<url-pattern>/handleQuestion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>handleTask</servlet-name>
+		<servlet-class>cn.justquiet.Controller.HandleTask</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handleTask</servlet-name>
+		<url-pattern>/handleTask</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>handleSent</servlet-name>
+		<servlet-class>cn.justquiet.Controller.HandleSent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handleSent</servlet-name>
+		<url-pattern>/handleSent</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>handleStuAnswer</servlet-name>
+		<servlet-class>cn.justquiet.Controller.HandleStuAnswer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handleStuAnswer</servlet-name>
+		<url-pattern>/handleStuAnswer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>handleTeaAnswer</servlet-name>
+		<servlet-class>cn.justquiet.Controller.HandleTeaAnswer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handleTeaAnswer</servlet-name>
+		<url-pattern>/handleTeaAnswer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewAnswer</servlet-name>
+		<servlet-class>cn.justquiet.Controller.ViewAnswer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewAnswer</servlet-name>
+		<url-pattern>/viewAnswer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>selectBlock</servlet-name>
+		<servlet-class>cn.justquiet.Controller.SelectBlock</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>selectBlock</servlet-name>
+		<url-pattern>/selectBlock</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>attach</servlet-name>
+		<servlet-class>cn.justquiet.Controller.DownloadAttach</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attach</servlet-name>
+		<url-pattern>/attach</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>downloadG</servlet-name>
+		<servlet-class>cn.justquiet.Controller.DownloadGather</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downloadG</servlet-name>
+		<url-pattern>/downloadG</url-pattern>
+	</servlet-mapping>
+</web-app>

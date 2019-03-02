@@ -1,0 +1,25 @@
+[{
+    "ClassID": 1,
+    "name": "软件171",
+    "MajorID": 1
+}, {
+    "ClassID": 2,
+    "name": "软件172",
+    "MajorID": 1
+}, {
+    "ClassID": 3,
+    "name": "计科171",
+    "MajorID": 2
+}, {
+    "ClassID": 4,
+    "name": "计科172",
+    "MajorID": 2
+},{
+    "ClassID": 5,
+    "name": "计科173",
+    "MajorID": 2
+},{
+    "ClassID": 6,
+    "name": "计科174",
+    "MajorID": 2
+}]

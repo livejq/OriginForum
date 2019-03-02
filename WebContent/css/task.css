@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/*blockquote::before {
+    content: open-quote;
+    color: #ddd;
+    z-index: -1;
+    font-size:80px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: "SF Pro Display", Roboto, Noto, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    blockquote::after, ::before {
+    box-sizing: border-box;
+}
+*/
+#writtenPane{
+	width:900px;
+	height:720px;
+    margin:20px auto;
+    position:relative;
+    border:1px solid white;
+}
+.title-box{
+	width:90%;
+	height:30px;
+    margin:20px auto;
+    border-radius:4px;
+}
+.title-box input{
+	width:100%;
+	height:100%;
+	font:15px sans-serif;
+	padding-left:15px;
+	border-radius:4px;
+	background:#DEDEDE;
+}
+input::-webkit-input-placeholder{
+    font-size:16px;
+}
+::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    font-size:16px;
+}
+:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    font-size:16px;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    font-size:16px;
+}
+.input-content{
+	width:90%;
+	margin:20px auto;
+}
+.input-content textarea{
+	width:100%;
+	height:300px;
+	font:15px sans-serif;
+	border-radius:4px;
+	resize:none;
+	padding-left:15px;
+	padding-top:15px;
+	background:#DEDEDE;
+	border:1px solid #ddd;
+}
+.s-target{
+	border-bottom:1px solid white;
+	width:90%;
+	height:50px;
+	line-height:0.8em;
+	margin:10px auto;
+}
+.s-target label,.s-target div{
+	display:inline-block;
+	font:17px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+.s-target #label-c{
+	margin-left:50px;
+}
+.top-m,.top-c{
+	width: 150px;
+    height: 27px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #ccc;
+    background:#DEDEDE;
+}
+.deadline{
+	width: 120px;
+    height: 24px;
+    margin-left:60px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #ccc;
+    background:#DEDEDE;
+    font:15px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+.deadline input{
+	width: 110px;
+    height: 24px;
+    padding-left:10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #ccc;
+    background:#DEDEDE;
+    font:15px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+.top-m select,.top-c select{
+    width: 150px;
+    height: 27px;
+    border-radius: 4px;
+    line-height: 32px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding-left: 15px;
+    opacity:0.8;
+    background:url("../images/down.gif") no-repeat 130px;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}
+.top-m select:hover,.top-c select:hover{
+    opacity:1;
+}
+.attach{
+	width:90%;
+	height:110px;
+    margin:20px auto;
+    overflow:auto;
+    border-radius:4px;
+}
+.attach .addFile{
+	display:inline-block;
+	width:80px;
+	height:24px;
+	padding-top:5px;
+	text-align:center;
+    color: white;
+    font:13px Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    background: #0e2d43;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    opacity:0.8;
+}
+.attach .addFile:hover{
+	opacity:1;
+	cursor: pointer;
+}
+.attach .addFile label:hover{
+	cursor: pointer;
+}
+.attach #fileName{
+	height:20px;
+	margin-top:10px;
+	padding-bottom:6px;
+	text-align:left;
+	font:14px Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+	border-bottom:1px solid white;
+}
+.attach em{
+	display:inline-block;
+	font:14px Segoe UI Emoji;
+	color:#990000;
+}
+.addFile label{
+	cursor:pointer;
+}
+.addFile input{
+	width:0;
+	height:0;
+	display:none;
+}
+
+.sent-mess{
+	width:90%;
+	margin:30px auto;
+	text-align:center;
+}
+.sent-mess input{
+	width:100px;
+	height:40px;
+	border-radius: 4px;
+	margin:5px auto;
+	color:#C92027;
+	background:white;
+	font:18px Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+	border:1px solid #dc3545;
+}
+.sent-mess input:hover{
+	color:white;
+	background:#C92027;
+	cursor: pointer;
+}
+.taskmess{
+	font-size:16px;
+	text-align:center;
+	color:white;
+}
+
