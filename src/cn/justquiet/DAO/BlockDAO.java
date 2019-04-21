@@ -1,8 +1,8 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
 import java.util.List;
 
-import cn.justquiet.Beans.Question;
+import cn.justquiet.bean.Question;
 
 public interface BlockDAO {
 	public List<Question> executeQueryQuestion(int qtype);

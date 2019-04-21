@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,14 +22,14 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import cn.justquiet.Beans.Check;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Beans.Task;
-import cn.justquiet.Beans.Teacher;
-import cn.justquiet.Exception.RuntimeException;
-import cn.justquiet.Factory.PersonDAOFactory;
-import cn.justquiet.ServiceImpl.TaskBusinessImpl;
-import cn.justquiet.Utils.ConvertUtils;
+import cn.justquiet.bean.Check;
+import cn.justquiet.bean.Student;
+import cn.justquiet.bean.Task;
+import cn.justquiet.bean.Teacher;
+import cn.justquiet.daoimpl.TaskDAOImpl;
+import cn.justquiet.exception.RuntimeException;
+import cn.justquiet.factory.PersonDAOFactory;
+import cn.justquiet.util.ConvertUtils;
 
 public class HandleTask extends HttpServlet{
 	
@@ -60,7 +60,7 @@ public class HandleTask extends HttpServlet{
 		tk.setTname(tea.getTname());
 		String date = ConvertUtils.getTime();
 		tk.setDate(date);
-		TaskBusinessImpl tbi = new TaskBusinessImpl();
+		TaskDAOImpl tbi = new TaskDAOImpl();
 		List<Student> liststu = null;
 		int tid = tea.getTid();
 		String tkcodes = null;
@@ -69,7 +69,7 @@ public class HandleTask extends HttpServlet{
 		String cutoff = null;
 		while(true) {
 			tkcodes = ConvertUtils.getRandom(8);
-			if(!tbi.QueryTkcodes(tkcodes)) {
+			if(!tbi.executeQueryTkcodes(tkcodes)) {
 				tk.setTkcodes(tkcodes);
 				break;
 			}
@@ -93,7 +93,7 @@ public class HandleTask extends HttpServlet{
 					}else if(fieldName.equals("inputContent")) {
 						tk.setTkcontent(fieldValue);
 					}else if(fieldName.equals("s-class")){
-						int cid = tbi.QueryCidByClassName(fieldValue);
+						int cid = tbi.executeQueryCidByClassname(fieldValue);
 						tk.setCid(cid);
 						cname = fieldValue;
 						liststu = PersonDAOFactory.getPersonDAOInstance().executeQueryStuByCid(cid);
@@ -121,7 +121,7 @@ public class HandleTask extends HttpServlet{
 					}
 					out.close();
 					in.close();
-					if(tbi.SetTask(tk)) {
+					if(tbi.executeSetTask(tk)) {
 						String taskmess = "发布成功！";
 						taskmess = URLEncoder.encode(taskmess,"UTF-8");
 						response.sendRedirect("teacher/task.jsp?taskmess="+taskmess);
@@ -144,7 +144,7 @@ public class HandleTask extends HttpServlet{
 					ck.setSid(stu.getSid());
 					ck.setSname(stu.getSname());
 					ck.setCutoff(cutoff);
-					tbi.SetClassTask(ck);
+					tbi.executeSetClassTask(ck);
 				}
 			}
 		} catch (FileUploadException e) {

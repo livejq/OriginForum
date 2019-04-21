@@ -1,14 +1,9 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.URLEncoder;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

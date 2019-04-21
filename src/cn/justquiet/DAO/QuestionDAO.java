@@ -1,6 +1,6 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
-import cn.justquiet.Beans.Question;
+import cn.justquiet.bean.Question;
 
 public interface QuestionDAO {
 	public int executeQueryQstType(String qvalue);

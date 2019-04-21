@@ -1,4 +1,4 @@
-package cn.justquiet.Exception;
+package cn.justquiet.exception;
 
 public class RuntimeException extends Exception{
 	/**

@@ -1,9 +1,9 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
 import java.util.List;
 
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Beans.Teacher;
+import cn.justquiet.bean.Student;
+import cn.justquiet.bean.Teacher;
 
 public interface PersonDAO {
 	public int isStudent(String id,String password);

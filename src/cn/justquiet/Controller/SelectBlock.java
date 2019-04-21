@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Question;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.ServiceImpl.BlockBusinessImpl;
-import cn.justquiet.ServiceImpl.QuestionBusinessImpl;
+import cn.justquiet.bean.Question;
+import cn.justquiet.bean.Student;
+import cn.justquiet.daoimpl.BlockDAOImpl;
+import cn.justquiet.daoimpl.QuestionDAOImpl;
 
 public class SelectBlock extends HttpServlet{
 	
@@ -34,10 +34,10 @@ public class SelectBlock extends HttpServlet{
 		HttpSession session = request.getSession();
 		@SuppressWarnings("unchecked")
 		List<Student> liststu = (List<Student>)session.getAttribute("student");
-		BlockBusinessImpl bbs = new BlockBusinessImpl();
-		QuestionBusinessImpl qbi = new QuestionBusinessImpl();
-		int qtype = qbi.QueryQstType(type);
-		List<Question> listqst = bbs.QueryQuestion(qtype);
+		BlockDAOImpl bbs = new BlockDAOImpl();
+		QuestionDAOImpl qbi = new QuestionDAOImpl();
+		int qtype = qbi.executeQueryQstType(type);
+		List<Question> listqst = bbs.executeQueryQuestion(qtype);
 		session.setAttribute("question",listqst);
 		if(liststu!=null)
 			response.sendRedirect("student/community.jsp?page_count=1");

@@ -1,4 +1,4 @@
-package cn.justquiet.DAOImpl;
+package cn.justquiet.daoimpl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,11 +6,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Beans.Teacher;
-import cn.justquiet.DAO.PersonDAO;
-import cn.justquiet.DB.DBConnection;
-import cn.justquiet.DB.DBUtils;
+import cn.justquiet.bean.Student;
+import cn.justquiet.bean.Teacher;
+import cn.justquiet.dao.PersonDAO;
+import cn.justquiet.db.DBConnection;
+import cn.justquiet.db.DBUtils;
 
 public class PersonDAOImpl implements PersonDAO{
 

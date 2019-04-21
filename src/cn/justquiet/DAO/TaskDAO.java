@@ -1,9 +1,9 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
 import java.util.List;
 
-import cn.justquiet.Beans.Check;
-import cn.justquiet.Beans.Task;
+import cn.justquiet.bean.Check;
+import cn.justquiet.bean.Task;
 
 public interface TaskDAO {
 	public int executeQueryCidByClassname(String classname);

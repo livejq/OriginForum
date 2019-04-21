@@ -1,4 +1,4 @@
-package cn.justquiet.Filter;
+package cn.justquiet.filter;
 
 import java.io.IOException;
 import javax.servlet.Filter;

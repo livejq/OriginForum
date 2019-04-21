@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Question;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.ServiceImpl.QuestionBusinessImpl;
-import cn.justquiet.Utils.ConvertUtils;
+import cn.justquiet.bean.Question;
+import cn.justquiet.bean.Student;
+import cn.justquiet.daoimpl.QuestionDAOImpl;
+import cn.justquiet.util.ConvertUtils;
 
 public class HandleQuestion extends HttpServlet{
 	
@@ -41,8 +41,8 @@ public class HandleQuestion extends HttpServlet{
 		Student stu = liststu.get(0);
 		Question jq = new Question();
 		String date = ConvertUtils.getTime();
-		QuestionBusinessImpl qbi = new QuestionBusinessImpl();
-		int qtype = qbi.QueryQstType(major);
+		QuestionDAOImpl qbi = new QuestionDAOImpl();
+		int qtype = qbi.executeQueryQstType(major);
 		jq.setQtype(qtype);
 		jq.setNickname(stu.getSnickname());
 		jq.setSlevel(stu.getSlevel());
@@ -50,9 +50,9 @@ public class HandleQuestion extends HttpServlet{
 		jq.setTitle(title);
 		jq.setDetails(inputContent);
 		jq.setCodes(inputCodes);
-		int qid = qbi.SetQuestion(jq);
+		int qid = qbi.executeSetQuestion(jq);
 		String askmess = "";
-		if(qbi.SetStuQstId(stu.getSid(), qid)) {
+		if(qbi.executeSetStuQstId(stu.getSid(), qid)) {
 			askmess = "发布成功！";
 			askmess = URLEncoder.encode(askmess,"UTF-8");
 			response.sendRedirect("student/ask.jsp?askmess="+askmess);

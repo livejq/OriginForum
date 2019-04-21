@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 

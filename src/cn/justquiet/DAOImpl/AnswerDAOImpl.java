@@ -1,4 +1,4 @@
-package cn.justquiet.DAOImpl;
+package cn.justquiet.daoimpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import cn.justquiet.Beans.Answer;
-import cn.justquiet.DAO.AnswerDAO;
-import cn.justquiet.DB.DBConnection;
-import cn.justquiet.DB.DBUtils;
+import cn.justquiet.bean.Answer;
+import cn.justquiet.dao.AnswerDAO;
+import cn.justquiet.db.DBConnection;
+import cn.justquiet.db.DBUtils;
 
 public class AnswerDAOImpl implements AnswerDAO{
 

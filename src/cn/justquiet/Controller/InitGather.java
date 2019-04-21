@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Task;
-import cn.justquiet.Beans.Teacher;
-import cn.justquiet.ServiceImpl.GatherBusinessImpl;
+import cn.justquiet.bean.Task;
+import cn.justquiet.bean.Teacher;
+import cn.justquiet.daoimpl.GatherDAOImpl;
 
 public class InitGather extends HttpServlet{
 	
@@ -33,9 +33,9 @@ public class InitGather extends HttpServlet{
 		@SuppressWarnings("unchecked")
 		List<Teacher> listtea = (List<Teacher>) session.getAttribute("teacher");
 		Teacher tea = listtea.get(0);
-		GatherBusinessImpl gbi = new GatherBusinessImpl();
-		List<Task> tknot = gbi.QueryTaskByTid(tea.getTid(), 0);
-		List<Task> tkok = gbi.QueryTaskByTid(tea.getTid(), 1);
+		GatherDAOImpl gbi = new GatherDAOImpl();
+		List<Task> tknot = gbi.executeQueryTaskByTid(tea.getTid(), 0);
+		List<Task> tkok = gbi.executeQueryTaskByTid(tea.getTid(), 1);
 		
 //		List<Check> done = gbi.QueryCheckByTkcodes(, 1);
 //		List<Student> notdo = gbi.QueryCheckNotDone(.get(0).getTkcodes(), 0);

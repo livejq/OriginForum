@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Answer;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.ServiceImpl.AnswerBusinessImpl;
-import cn.justquiet.ServiceImpl.QuestionBusinessImpl;
+import cn.justquiet.bean.Answer;
+import cn.justquiet.bean.Student;
+import cn.justquiet.daoimpl.AnswerDAOImpl;
+import cn.justquiet.daoimpl.QuestionDAOImpl;
 
 public class ViewAnswer extends HttpServlet{
 	
@@ -35,11 +35,11 @@ public class ViewAnswer extends HttpServlet{
 		HttpSession session = request.getSession();
 		@SuppressWarnings("unchecked")
 		List<Student> liststu = (List<Student>)session.getAttribute("student");
-		QuestionBusinessImpl qbi = new QuestionBusinessImpl();
-		int answer = qbi.QueryQstAnswer(qid);
+		QuestionDAOImpl qbi = new QuestionDAOImpl();
+		int answer = qbi.executeQueryQstAnswer(qid);
 		if(answer>0) {
-			AnswerBusinessImpl abi = new AnswerBusinessImpl();
-			List<Answer> listans = abi.QueryAnsByQid(qid);
+			AnswerDAOImpl abi = new AnswerDAOImpl();
+			List<Answer> listans = abi.executeQueryAnsByQid(qid);
 			session.setAttribute("answer",listans);
 			if(liststu!=null)
 				response.sendRedirect("student/solution.jsp?index="+index);

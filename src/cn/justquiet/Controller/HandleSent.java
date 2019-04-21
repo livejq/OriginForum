@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,11 +20,11 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import cn.justquiet.Beans.Check;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Exception.RuntimeException;
-import cn.justquiet.ServiceImpl.TaskBusinessImpl;
-import cn.justquiet.Utils.ConvertUtils;
+import cn.justquiet.bean.Check;
+import cn.justquiet.bean.Student;
+import cn.justquiet.daoimpl.TaskDAOImpl;
+import cn.justquiet.exception.RuntimeException;
+import cn.justquiet.util.ConvertUtils;
 
 public class HandleSent extends HttpServlet{
 	
@@ -54,7 +54,7 @@ public class HandleSent extends HttpServlet{
 		ck.setSid(stu.getSid());
 		String date = ConvertUtils.getTime();
 		ck.setDate(date);
-		TaskBusinessImpl tbi = new TaskBusinessImpl();
+		TaskDAOImpl tbi = new TaskDAOImpl();
 		String folder = null;
 		if(!servletFileUpload.isMultipartContent(request)) {
 			try {
@@ -97,7 +97,7 @@ public class HandleSent extends HttpServlet{
 					in.close();
 				}
 			}
-			if(tbi.UpdateClassTask(ck)) {
+			if(tbi.executeUpdateClassTask(ck)) {
 				String sentmess = "提交成功！";
 			    sentmess = URLEncoder.encode(sentmess,"UTF-8");
 				response.sendRedirect("student/sent.jsp?sentmess="+sentmess);

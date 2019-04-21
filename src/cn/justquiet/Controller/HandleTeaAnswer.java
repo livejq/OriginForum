@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Answer;
-import cn.justquiet.Beans.Teacher;
-import cn.justquiet.ServiceImpl.AnswerBusinessImpl;
-import cn.justquiet.ServiceImpl.QuestionBusinessImpl;
-import cn.justquiet.Utils.ConvertUtils;
+import cn.justquiet.bean.Answer;
+import cn.justquiet.bean.Teacher;
+import cn.justquiet.daoimpl.AnswerDAOImpl;
+import cn.justquiet.daoimpl.QuestionDAOImpl;
+import cn.justquiet.util.ConvertUtils;
 
 public class HandleTeaAnswer extends HttpServlet{
 	
@@ -40,16 +40,16 @@ public class HandleTeaAnswer extends HttpServlet{
 		Teacher tea = listtea.get(0);
 		Answer as = new Answer();
 		String date = ConvertUtils.getTime();
-		AnswerBusinessImpl abi = new AnswerBusinessImpl();
+		AnswerDAOImpl abi = new AnswerDAOImpl();
 		as.setQid(qid);
 		as.setNickname(tea.getTnickname());
 		String tlevel = tea.getTlevel();
 		as.setLevel(tlevel);
 		as.setDate(date);
 		as.setAnswer(answer);
-		if(abi.SetAnswer(as)) {
-			QuestionBusinessImpl qbi = new QuestionBusinessImpl();
-			if(qbi.SetQstAnswer(qid, true)) {
+		if(abi.executeSetAnswer(as)) {
+			QuestionDAOImpl qbi = new QuestionDAOImpl();
+			if(qbi.executeSetQstAnswer(qid, true)) {
 				request.setAttribute("index", index);
 				request.setAttribute("qid", qid);
 				request.getRequestDispatcher("viewAnswer").forward(request, response);

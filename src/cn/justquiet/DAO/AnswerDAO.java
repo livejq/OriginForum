@@ -1,8 +1,8 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
 import java.util.List;
 
-import cn.justquiet.Beans.Answer;
+import cn.justquiet.bean.Answer;
 
 public interface AnswerDAO {
 	public List<Answer> executeQueryAnsByQid(int qid);

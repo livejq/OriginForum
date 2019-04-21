@@ -1,10 +1,10 @@
-package cn.justquiet.DAO;
+package cn.justquiet.dao;
 
 import java.util.List;
 
-import cn.justquiet.Beans.Check;
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Beans.Task;
+import cn.justquiet.bean.Check;
+import cn.justquiet.bean.Student;
+import cn.justquiet.bean.Task;
 
 public interface GatherDAO {
 	public List<Task> executeQueryTaskByTid(int tid, int status);//每次查询都要计算是否已过期,Task对象里面有下面方法所需的参数

@@ -1,4 +1,4 @@
-package cn.justquiet.Controller;
+package cn.justquiet.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.justquiet.Beans.Student;
-import cn.justquiet.Beans.Teacher;
-import cn.justquiet.Factory.PersonDAOFactory;
+import cn.justquiet.bean.Student;
+import cn.justquiet.bean.Teacher;
+import cn.justquiet.factory.PersonDAOFactory;
 
 public class InitPerson extends HttpServlet {
 	
