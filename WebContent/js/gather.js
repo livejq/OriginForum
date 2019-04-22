@@ -76,8 +76,8 @@ window.onload = function(){
 			}
 		}
 	}
-	
 }
+
 function selectAll(){
 	var oTable = document.getElementById('send-list');
 	var oBtnSelectAll = oTable.getElementsByTagName('input')[0];
@@ -93,8 +93,9 @@ function selectAll(){
 		}
 	}
 }
-function openPage(i){
-	window.location.href='gather.jsp?page_count='+i;
+
+function openPage(i, tkcodes, status) {
+	window.location.href='gather.jsp?page_count=' + i + '&tkcodes=' + tkcodes + '&status=' + status;
 }
 
 

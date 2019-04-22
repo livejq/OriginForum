@@ -9,19 +9,23 @@
 	<Cards>
 		<ImgSrc>../images/xml_android.jpg</ImgSrc>
 		<Title>Android 8.1 Oreo：不再需要关于Wi-Fi速度的猜测</Title>
-		<Info>随着Android 8.1 Oreo的更新，Google推出了一项新功能，可在连接之前显示Wi-Fi网络的速度。在寻找公共Wi-Fi热点时，这些信息非常有用。</Info>
+		<Info>随着Android 8.1
+			Oreo的更新，Google推出了一项新功能，可在连接之前显示Wi-Fi网络的速度。在寻找公共Wi-Fi热点时，这些信息非常有用。</Info>
 		<Link>developer.android.google.cn</Link>
 	</Cards>
 	<Cards>
 		<ImgSrc>../images/xml_linux.jpg</ImgSrc>
 		<Title>为企业构建开源解决方案</Title>
-		<Info>开放式开发模型将红帽工程师与开源社区联系起来。这些社区的成员共同努力，以确定和提升最佳想法。Red Hat通过为代码做出贡献以及通过从上游项目创建产品来支持这些社区。从操作系统到存储，中间件和容器 ,一直到管理和自动化,红帽正在为企业构建带有认证和服务的开源解决方案。</Info>
+		<Info>开放式开发模型将红帽工程师与开源社区联系起来。这些社区的成员共同努力，以确定和提升最佳想法。Red
+			Hat通过为代码做出贡献以及通过从上游项目创建产品来支持这些社区。从操作系统到存储，中间件和容器
+			,一直到管理和自动化,红帽正在为企业构建带有认证和服务的开源解决方案。</Info>
 		<Link>www.redhat.com</Link>
 	</Cards>
 	<Cards>
 		<ImgSrc>../images/xml_web.jpg</ImgSrc>
 		<Title>MVC、DAO开发模式</Title>
-		<Info>客户层：因为现在都采用了B/S开发架构，所以一般都使用浏览器进行访问。显示层：使用JSP/Servlet进行页面效果的显示。业务层（Business Object，业务对象）：会将多个原子性的DAO操作进行组合，组合成一个完整的业务逻辑。数据层（DAO）：提供多个原子性的DAO操作，例如：增加、修改、删除等，都属于原子性的操作。</Info>
+		<Info>客户层：因为现在都采用了B/S开发架构，所以一般都使用浏览器进行访问。显示层：使用JSP/Servlet进行页面效果的显示。业务层（Business
+			Object，业务对象）：会将多个原子性的DAO操作进行组合，组合成一个完整的业务逻辑。数据层（DAO）：提供多个原子性的DAO操作，例如：增加、修改、删除等，都属于原子性的操作。</Info>
 		<Link>www.apache.org</Link>
 	</Cards>
 	<Cards>
@@ -33,7 +37,8 @@
 	<Cards>
 		<ImgSrc>../images/xml_mysql.png</ImgSrc>
 		<Title>MySQL文档存储</Title>
-		<Info>MySQL文档存储允许开发人员使用SQL关系表和无架构JSON集合。NoSQL + SQL = MySQL,MySQL文档存储为用户提供了开发传统SQL关系应用程序和NoSQL无架构文档数据库应用程序的最大灵活性。这消除了对单独的NoSQL文档数据库的需要。开发人员可以在同一个数据库和同一个应用程序中混合和匹配关系数据和JSON文档。例如，可以在同一个应用程序中查询这两个数据模型，结果可以是表格，表格或JSON格式。</Info>
+		<Info>MySQL文档存储允许开发人员使用SQL关系表和无架构JSON集合。NoSQL + SQL =
+			MySQL,MySQL文档存储为用户提供了开发传统SQL关系应用程序和NoSQL无架构文档数据库应用程序的最大灵活性。这消除了对单独的NoSQL文档数据库的需要。开发人员可以在同一个数据库和同一个应用程序中混合和匹配关系数据和JSON文档。例如，可以在同一个应用程序中查询这两个数据模型，结果可以是表格，表格或JSON格式。</Info>
 		<Link>dev.mysql.com</Link>
 	</Cards>
 </News>

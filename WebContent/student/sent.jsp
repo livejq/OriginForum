@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" import="cn.justquiet.bean.Student" import="cn.justquiet.bean.Task"%>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" import="cn.justquiet.bean.Student"
+	import="cn.justquiet.bean.Task"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,12 +12,13 @@
 <link href="../css/sent.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<!-- 将学生信息迭代出来，放在当前页面中，通过使用JSTL来取值 -->
 	<%
 	List<Student> liststu = (List<Student>)session.getAttribute("student");
-	if(liststu!=null){
-		Iterator iterator = liststu.iterator();
-		if(iterator.hasNext()){
-			pageContext.setAttribute("stu",iterator.next());
+	if(liststu != null) {
+		Iterator<Student> iterator = liststu.iterator();
+		if(iterator.hasNext()) {
+			pageContext.setAttribute("stu", iterator.next());
 		}
 	}
 %>
@@ -27,11 +29,13 @@
 			<li><a href="ask.jsp">提出问题</a></li>
 			<li><a href="show.jsp">我的作业</a></li>
 			<li><a href="sent.jsp">提交作业</a></li>
-			<li class="user"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-					<title>个人中心</title>
-					<path d="M36 44.163v-3.299c4.406-2.483 8-8.673 8-14.864 0-9.941 0-18-12-18s-12 8.059-12 18c0 6.191 3.594 12.382 8 14.864v3.299c-13.569 1.109-24 7.776-24 15.837h56c0-8.060-10.431-14.727-24-15.837z"></path>
-				</svg><span title="${stu.snickname }">${stu.snickname }</span>
-			</li>
+			<li class="user"><svg version="1.1"
+					xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+					viewBox="0 0 64 64">
+				<title>个人中心</title>
+				<path
+					d="M36 44.163v-3.299c4.406-2.483 8-8.673 8-14.864 0-9.941 0-18-12-18s-12 8.059-12 18c0 6.191 3.594 12.382 8 14.864v3.299c-13.569 1.109-24 7.776-24 15.837h56c0-8.060-10.431-14.727-24-15.837z"></path>
+				</svg><span title="${stu.snickname }">${stu.snickname }</span></li>
 		</ul>
 	</div>
 	<div id="user-msg">
@@ -42,47 +46,49 @@
 			<li class="exit"><a href="../exit">退出</a></li>
 		</ul>
 	</div>
-	<form action="../handleSent" method="post" enctype="multipart/form-data">
-	<div id="writtenPane">
-		<div class="attach">
-	        <div class="addFile">
-				<label for="uploadtk"><img src="../images/upload.png"/></label>
-				<input type="file" id="uploadtk" name="file"/>
-	    	</div>
-	    	<div class="attach-mess-center">
-		    	<em>(不超过100MB)</em>
-		    	<span id="fileName"></span>
-	    	</div>
-		</div>
-<%
+	<form action="../handleSent" method="post"
+		enctype="multipart/form-data">
+		<div id="writtenPane">
+			<div class="attach">
+				<div class="addFile">
+					<label for="uploadtk"><img src="../images/upload.png" /></label> <input
+						type="file" id="uploadtk" name="file" />
+				</div>
+				<div class="attach-mess-center">
+					<em>(不超过100MB)</em> <span id="fileName"></span>
+				</div>
+			</div>
+			<%
 	List<Task> listnot = (List<Task>)session.getAttribute("tknot");
 %>
-        <div class="s-target">
-        	<label>作业编号：</label>
-        	<div class="top-m">
-        	<select name="tkcodes" id="s-major">
-        		<option id="sentNull" selected="selected" value="start">请选择</option>
-<%
-	if(listnot!=null){
-		Iterator itnot = listnot.iterator();
-		while(itnot.hasNext()){
-			pageContext.setAttribute("tknot",itnot.next());
+			<div class="s-target">
+				<label>作业编号：</label>
+				<div class="top-m">
+					<select name="tkcodes" id="s-major">
+						<option id="sentNull" selected="selected" value="start">请选择</option>
+						<%
+	if(listnot != null) {
+		Iterator<Task> itnot = listnot.iterator();
+		while(itnot.hasNext()) {
+			pageContext.setAttribute("tknot", itnot.next());
 %>
-        		<option value="${tknot.tkcodes }">${tknot.tkcodes }</option>
-<%
+						<option value="${tknot.tkcodes }">${tknot.tkcodes }</option>
+						<%
 		}
 	}
 %>
-        	</select>
-        	</div>
-        </div>
-		<div class="sent-mess">
-			<input id="btnSent" type="submit" value="提交" title=":+">
+					</select>
+				</div>
+			</div>
+			<div class="sent-mess">
+				<input id="btnSent" type="submit" value="提交" title=":+">
+			</div>
+			<div class="sentmess">
+				<span>${param.sentmess }</span>
+			</div>
 		</div>
-		<div class="sentmess"><span>${param.sentmess }</span></div>
-	</div>
 	</form>
-<script type="text/javascript" src="../js/home.js"></script>
-<script type="text/javascript" src="../js/sent.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../js/sent.js"></script>
 </body>
 </html>

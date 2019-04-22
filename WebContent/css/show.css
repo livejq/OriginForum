@@ -1,122 +1,139 @@
 @charset "UTF-8";
 /*整体布局*/
-body{
-	background-color:#DEDEDE;
+body {
+	background-color: #DEDEDE;
 }
 /*
 a:hover::before, a:hover::after { position: absolute; }
 a:hover::before { content: "\5B"; left: -10px; }
 a:hover::after { content: "\5D"; right:  -10px; }
 鼠标停留超链接出现中括号*/
-#pane{
+#pane {
 	width: 1350px;
-    min-height: 700px;
-    margin: 20px auto;
-    position: relative;
-    border:1px solid white; 
+	min-height: 700px;
+	margin: 20px auto;
+	position: relative;
+	border: 1px solid white;
 }
-#scrollPane{
-	float:left;
-	display:inline-block;
-	width:300px;
-	height:700px;
-	overflow:scroll;
+
+#scrollPane {
+	float: left;
+	display: inline-block;
+	width: 300px;
+	height: 700px;
+	overflow: scroll;
 }
-#showContent{
-	float:left;
-	display:inline-block;
-	width:1050px;
-	height:700px;
+
+#showContent {
+	float: left;
+	display: inline-block;
+	width: 1050px;
+	height: 700px;
 }
 /*内部细节设计*/
 /*scroll*/
-.down_list{
+.down_list {
 	width: 100%;
-	margin-top:auto;
+	margin-top: auto;
 }
-.down_list h5{
-	height: 25px; 
+
+.down_list h5 {
+	height: 25px;
 	line-height: 25px;
-	padding-left: 10px; 
-	font-size: 17px; 
-	font-weight: normal; 
+	padding-left: 10px;
+	font-size: 17px;
+	font-weight: normal;
 	color: #57646e;
-	font-family:sans-serif;
+	font-family: sans-serif;
 	background: url(../images/down_list_h2_bg.gif) repeat-x;
 	cursor: pointer;
 }
+
 .down_list ul {
-	overflow: hidden; 
-	background: #e9edf2; 
-	font-size: 13px; 
+	overflow: hidden;
+	background: #e9edf2;
+	font-size: 13px;
 }
-.down_list li { 
-	width: 100%; 
-	float: left; 
+
+.down_list li {
+	width: 100%;
+	float: left;
 }
-.down_list a { 
-	display: block; 
-	line-height: 25px; 
+
+.down_list a {
+	display: block;
+	line-height: 25px;
 	padding-left: 28px;
 	overflow: hidden;
-	text-overflow:ellipsis;
+	text-overflow: ellipsis;
 	white-space: nowrap;
-	color: #6b7980;  
+	color: #6b7980;
 }
-.down_list a:hover { 
-	background: #fff;  
+
+.down_list a:hover {
+	background: #fff;
 }
 /*标题*/
-.task-title{
-	height:80px;
-	margin-top:20px;
-	overflow:auto;
-	text-align:center;
-	white-space:wrap;
+.task-title {
+	height: 80px;
+	margin-top: 20px;
+	overflow: auto;
+	text-align: center;
+	white-space: wrap;
 }
-.task-title span{
-	font:16px Apple Color Emoji,Segoe UI Emoji;
-	color:#C92027;
+
+.task-title span {
+	font: 16px Apple Color Emoji, Segoe UI Emoji;
+	color: #C92027;
 }
-.task-title em{
-	font:16px Apple Color Emoji,Segoe UI Emoji;
-	color:#6C78FA;
+
+.task-title em {
+	font: 16px Apple Color Emoji, Segoe UI Emoji;
+	color: #6C78FA;
 }
 /*下载附件*/
-.panel .d-total{
-	height:20px;
-	font:17px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-	font-weight:400;
-	margin:10px 0 10px 20px;
+.panel .d-total {
+	height: 20px;
+	font: 17px Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji, Segoe UI Symbol;
+	font-weight: 400;
+	margin: 10px 0 10px 20px;
 }
-.panel span a{
-	font:15px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-	opacity:0.7;
+
+.panel span a {
+	font: 15px Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji, Segoe UI Symbol;
+	opacity: 0.7;
 }
-.panel span a:hover{
-	color:#2DC450;
-	opacity:1;
+
+.panel span a:hover {
+	color: #2DC450;
+	opacity: 1;
 }
 /*统计*/
-.a-total{
-	height:20px;
-	font:17px Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-	font-weight:400;
-	margin:10px 0 10px 20px;
+.a-total {
+	height: 20px;
+	font: 17px Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji, Segoe UI Symbol;
+	font-weight: 400;
+	margin: 10px 0 10px 20px;
 }
-.b-total{
-	width:75%;
-	height:300px;
-	margin:10px auto;
-	font:16px sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-	font-weight:400;
-	overflow:auto;
-	text-indent:2em;
-	padding:15px;
+
+.b-total {
+	width: 75%;
+	height: 300px;
+	margin: 10px auto;
+	font: 16px sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI
+		Symbol;
+	font-weight: 400;
+	overflow: auto;
+	text-indent: 2em;
+	padding: 15px;
 	white-space: wrap;
-	border-radius:4px;
-	border:2px solid gray;
+	border-radius: 4px;
+	border: 2px solid gray;
 }
-.b-total p{
-	line-height:1.4em;
+
+.b-total p {
+	line-height: 1.4em;
 }

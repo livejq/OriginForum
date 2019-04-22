@@ -1,175 +1,197 @@
 @charset "UTF-8";
 /*整体布局*/
-body{
-	background:#E9E9E9 url("../images/blank_book.jpg") no-repeat 50% 70px;
-	background-size:1400px 760px;
+body {
+	background: #E9E9E9 url("../images/blank_book.jpg") no-repeat 50% 70px;
+	background-size: 1400px 760px;
 }
-#personal-msg{
-	width:980px;
-	height:68px;
-	margin:0px auto;
+
+#personal-msg {
+	width: 980px;
+	height: 68px;
+	margin: 0px auto;
 }
-#paper-sheet{
-	width:895px;
-	height:550px;
-	margin:17px auto;
+
+#paper-sheet {
+	width: 895px;
+	height: 550px;
+	margin: 17px auto;
 }
-#paper-sheet .paper-sheet-code{
-	display:inline-block;
-	vertical-align:top;
-	overflow:auto;
-	width:440px;
-	height:548px;
+
+#paper-sheet .paper-sheet-code {
+	display: inline-block;
+	vertical-align: top;
+	overflow: auto;
+	width: 440px;
+	height: 548px;
 }
-#paper-sheet .paper-sheet-illustration{
-	display:inline-block;
-	vertical-align:top;
-	overflow:auto;
-	width:450px;
-	height:548px;
+
+#paper-sheet .paper-sheet-illustration {
+	display: inline-block;
+	vertical-align: top;
+	overflow: auto;
+	width: 450px;
+	height: 548px;
 }
-#all-answer-comment{
-	width:1200px;
-	height:600px;
-	overflow:auto;
-	margin:0px auto;
-	border-bottom:3px solid green;
+
+#all-answer-comment {
+	width: 1200px;
+	height: 600px;
+	overflow: auto;
+	margin: 0px auto;
+	border-bottom: 3px solid green;
 }
 /*细节设计*/
 /*发布者信息*/
-#personal-msg .personal-title{
-	display:inline-block;
-	width:850px;
-	height:66px;
-	vertical-align:top;
-	text-align:center;
-	line-height:1.8em;
-	text-indent:2em;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+#personal-msg .personal-title {
+	display: inline-block;
+	width: 850px;
+	height: 66px;
+	vertical-align: top;
+	text-align: center;
+	line-height: 1.8em;
+	text-indent: 2em;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+		Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
-#personal-msg dl{
-	display:inline-block;
-	width:125px;
-	height:65px;
-	vertical-align:top;
-	text-align:center; 
-	font:13px Verdana,Arial,PingFangSC-Regular;
+
+#personal-msg dl {
+	display: inline-block;
+	width: 125px;
+	height: 65px;
+	vertical-align: top;
+	text-align: center;
+	font: 13px Verdana, Arial, PingFangSC-Regular;
 }
-#personal-msg dl dt,#personal-msg dl dd{
-	display:inline-block;
-	margin-top:10px;
+
+#personal-msg dl dt, #personal-msg dl dd {
+	display: inline-block;
+	margin-top: 10px;
 }
-#personal-msg dl dt{
-	width:120px;
+
+#personal-msg dl dt {
+	width: 120px;
 	overflow: hidden;
-	text-overflow:ellipsis;
+	text-overflow: ellipsis;
 }
-#personal-msg dl dt a{
-	color:#0000ff;
+
+#personal-msg dl dt a {
+	color: #0000ff;
 }
-#personal-msg dl dt a:hover{
-	color:black;
+
+#personal-msg dl dt a:hover {
+	color: black;
 }
-#personal-msg dl dd span{
-	color:#cc0000;
+
+#personal-msg dl dd span {
+	color: #cc0000;
 }
 /*问题说明*/
-#paper-sheet p{
-	word-wrap:break-word;
-	white-space:pre-wrap;
-	padding:0.7em;
-	text-indent:2em;
+#paper-sheet p {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	padding: 0.7em;
+	text-indent: 2em;
 }
 /*统计*/
-#count-answer{
-	width:1200px;
-	margin:0px auto;
-	margin-top:125px;
-	color:#663300;
-	text-align:center;
-	font:18px Verdana,Arial;
-	border-bottom:3px solid green;
+#count-answer {
+	width: 1200px;
+	margin: 0px auto;
+	margin-top: 125px;
+	color: #663300;
+	text-align: center;
+	font: 18px Verdana, Arial;
+	border-bottom: 3px solid green;
 }
 /*回答*/
-#all-answer-comment .one-of-those{
-	height:170px;
-	border-bottom:1px dotted green;
+#all-answer-comment .one-of-those {
+	height: 170px;
+	border-bottom: 1px dotted green;
 }
-#all-answer-comment .one-of-those dd a{
-	color:#9900ff;
-	opacity:0.7;
+
+#all-answer-comment .one-of-those dd a {
+	color: #9900ff;
+	opacity: 0.7;
 }
-#all-answer-comment .one-of-those dd a:hover{
-	opacity:1;
+
+#all-answer-comment .one-of-those dd a:hover {
+	opacity: 1;
 }
-.one-of-those dl dd{
-	display:inline-block;
-	margin:5px;
-	font:14px Arial,Verdana,PingFangSC-Regular;
-	color:#cc9900;
+
+.one-of-those dl dd {
+	display: inline-block;
+	margin: 5px;
+	font: 14px Arial, Verdana, PingFangSC-Regular;
+	color: #cc9900;
 }
-.one-of-those div{
-	display:inline-block;
-	vertical-align:middle;
-	width:980px;
-	height:100px;
-	overflow:auto;
-	text-indent:2em;
-	font:14px "微软雅黑",Arial,Verdana,PingFangSC-Regular;
+
+.one-of-those div {
+	display: inline-block;
+	vertical-align: middle;
+	width: 980px;
+	height: 100px;
+	overflow: auto;
+	text-indent: 2em;
+	font: 14px "微软雅黑", Arial, Verdana, PingFangSC-Regular;
 }
-.one-of-those .support-or-oppose{
-	display:inline-block;
-	vertical-align:middle;
-	width:155px;
-	margin-left:30px;
-	text-align:center;
-	font:14px Arial,Verdana,PingFangSC-Regular;
+
+.one-of-those .support-or-oppose {
+	display: inline-block;
+	vertical-align: middle;
+	width: 155px;
+	margin-left: 30px;
+	text-align: center;
+	font: 14px Arial, Verdana, PingFangSC-Regular;
 }
-.one-of-those .support-or-oppose a{
-	color:gray;
+
+.one-of-those .support-or-oppose a {
+	color: gray;
 }
-.one-of-those .support-or-oppose a:hover{
-	color:black;
+
+.one-of-those .support-or-oppose a:hover {
+	color: black;
 }
-.one-of-those dl dt{
-	display:inline-block;
-	width:75px;
+
+.one-of-those dl dt {
+	display: inline-block;
+	width: 75px;
 }
 /*我的见解*/
-.answer-content{
-	width:75%;
-	margin:20px auto;
+.answer-content {
+	width: 75%;
+	margin: 20px auto;
 }
-.answer-content textarea{
-	width:100%;
-	height:100px;
-	font:15px sans-serif;
-	border-radius:4px;
-	resize:none;
-	padding-left:20px;
-	padding-top:10px;
-	background:#DEDEDE;
-	border:1px solid #ddd;
-}
-.sent-answer{
-	width:1200px;
-	margin:30px auto;
-	text-align:center;
-}
-.sent-answer input{
-	width:100px;
-	height:40px;
+
+.answer-content textarea {
+	width: 100%;
+	height: 100px;
+	font: 15px sans-serif;
 	border-radius: 4px;
-	margin:5px auto;
-	color:#C92027;
-	background:white;
-	font:18px Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-	border:1px solid #dc3545;
+	resize: none;
+	padding-left: 20px;
+	padding-top: 10px;
+	background: #DEDEDE;
+	border: 1px solid #ddd;
 }
-.sent-answer input:hover{
-	color:white;
-	background:#C92027;
+
+.sent-answer {
+	width: 1200px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.sent-answer input {
+	width: 100px;
+	height: 40px;
+	border-radius: 4px;
+	margin: 5px auto;
+	color: #C92027;
+	background: white;
+	font: 18px Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	border: 1px solid #dc3545;
+}
+
+.sent-answer input:hover {
+	color: white;
+	background: #C92027;
 	cursor: pointer;
 }
-
-
