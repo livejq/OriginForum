@@ -48,14 +48,14 @@ public class GatherDAOImpl implements GatherDAO{
 				tk.setPath(rs.getString(i++));
 				String date = ConvertUtils.getCutoffTime(rs.getTimestamp(i++), rs.getInt(i++));
 				if(ConvertUtils.isTaskOk(date)) {// 判定是否过期
-					if(status==0) {
+					if(status == 0) {
 						TaskDAOImpl ti = new TaskDAOImpl();
-						ti.executeUpdateTaskStatus(1, rs.getInt(1));
+						ti.executeUpdateTaskStatus(1, rs.getInt(1));// 设置数据表中对应的任务状态为1
 						tk.setStatus(1);
 					}
-				}else {
+				}else {// 设置截止日期和状态
 					tk.setCutoff(date);
-					tk.setStatus(0);
+					tk.setStatus(0);// 0表示未截止
 				}
 				listtask.add(tk);// 将结果加入到List中以便返回
 			}
