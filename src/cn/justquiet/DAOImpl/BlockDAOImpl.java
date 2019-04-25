@@ -14,6 +14,13 @@ import cn.justquiet.db.DBConnection;
 import cn.justquiet.db.DBUtils;
 
 public class BlockDAOImpl {
+	
+	/**
+	 * 根据问题类型查找所有问题
+	 * 
+	 * @param qtype
+	 * @return
+	 */
 	public List<Question> executeQueryQuestion(int qtype) {
 		Connection con = null;
 		String sql = "select * from tb_qst where qtype = '"+qtype+"'";

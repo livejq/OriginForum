@@ -17,6 +17,12 @@ import cn.justquiet.util.ConvertUtils;
 
 public class GatherDAOImpl implements GatherDAO{
 
+	/**
+	 * 根据教师id和完成状态来查找其布置过的所有任务，status值：1 完成, 0 未完成
+	 * 
+	 * @param tid 教师编号
+	 * @param status 状态码
+	 */
 	@Override
 	public List<Task> executeQueryTaskByTid(int tid, int status) {
 		List<Task> listtask = null;
@@ -41,7 +47,7 @@ public class GatherDAOImpl implements GatherDAO{
 				tk.setAttach(rs.getString(i++));
 				tk.setPath(rs.getString(i++));
 				String date = ConvertUtils.getCutoffTime(rs.getTimestamp(i++), rs.getInt(i++));
-				if(ConvertUtils.isTaskOk(date)) {//判定是否过期
+				if(ConvertUtils.isTaskOk(date)) {// 判定是否过期
 					if(status==0) {
 						TaskDAOImpl ti = new TaskDAOImpl();
 						ti.executeUpdateTaskStatus(1, rs.getInt(1));
@@ -61,6 +67,12 @@ public class GatherDAOImpl implements GatherDAO{
 		return listtask;
 	}
 
+	/**
+	 * 根据任务码（教师每布置一个任务，对应随机生成（生成前会监测是否已存在）一个唯一编号）和状态码（）来返回一个
+	 * 
+	 * @param tkcodes 作业码
+	 * @param status 完成状态
+	 */
 	@Override
 	public List<Check> executeQueryCheckByTkcodes(String tkcodes, int status) {
 		List<Check> listcheck = null;
@@ -97,6 +109,12 @@ public class GatherDAOImpl implements GatherDAO{
 		return listcheck;
 	}
 
+	/**
+	 * 根据作业码和完成状态查找学生完成进度，返回没有完成的学生姓名
+	 * 
+	 * @param tkcodes 作业码
+	 * @param status 完成状态
+	 */
 	@Override
 	public List<Student> executeQueryCheckNotDone(String tkcodes, int status) {
 		List<Student> liststu = null;
@@ -122,6 +140,11 @@ public class GatherDAOImpl implements GatherDAO{
 		return liststu;
 	}
 
+	/**
+	 * 根据班级编号返回班级人数
+	 * 
+	 * @param cid 班级编号
+	 */
 	@Override
 	public int executeQueryClassMember(int cid) {
 		Connection con = null;
@@ -144,6 +167,11 @@ public class GatherDAOImpl implements GatherDAO{
 		return all;
 	}
 
+	/**
+	 * 返回任务截止日期
+	 * 
+	 * @param tkcodes 任务码
+	 */
 	@Override
 	public String executeQueryCutoff(String tkcodes) {
 		Connection con = null;

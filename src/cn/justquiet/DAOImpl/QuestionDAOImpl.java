@@ -12,6 +12,11 @@ import cn.justquiet.db.DBUtils;
 
 public class QuestionDAOImpl implements QuestionDAO {
 
+	/**
+	 * 根据问题类型编号值来查找问题类型
+	 * 
+	 * @param qvalue 问题编号
+	 */
 	public int executeQueryQstType(String qvalue) {
 		Connection con = null;
 		String sql = "select * from tb_qtype where qvalue = '"+qvalue+"'";
@@ -34,7 +39,11 @@ public class QuestionDAOImpl implements QuestionDAO {
 		return qtype;
 	}
 
-	//设置为同步方法，一旦学生发布问题便立即获得对应的qid问题编号（同步方法确保数据库中相应的多个表使用的qid相同）
+	/**
+	 * 设置为同步方法，一旦学生发布问题便立即获得对应的qid问题编号（同步方法确保数据库中相应的多个表使用的qid相同）
+	 * 
+	 * @param question 问题bean对象
+	 */
 	public synchronized int executeSetQuestion(Question question) {
 		Connection con = null;
 		String sql = "insert into tb_qst values(default,?,?,?,?,?,?,?,default,default)";
@@ -71,6 +80,13 @@ public class QuestionDAOImpl implements QuestionDAO {
 		
 	}
 	
+	/**
+	 * 在另一个表中存储对应的学生id和所提出的问题编号
+	 * 
+	 * @param sid
+	 * @param qid
+	 * @return
+	 */
 	public boolean executeSetStuQstId(String sid, int qid) {
 		Connection con = null;
 		String sql = "insert into tb_sqst values(?,?,default)";
@@ -94,6 +110,12 @@ public class QuestionDAOImpl implements QuestionDAO {
 		
 	}
 
+	/**
+	 * 根据问题id更新回答总数
+	 * 
+	 * @param qid 问题id
+	 * @param hasNews 是否为一个新的回答
+	 */
 	@Override
 	public boolean executeSetQstAnswer(int qid, boolean hasNews) {
 		Connection con = null;
@@ -118,6 +140,10 @@ public class QuestionDAOImpl implements QuestionDAO {
 		return false;
 	}
 
+	/**
+	 * 根据问题id查找问题
+	 * 
+	 */
 	@Override
 	public int executeQueryQstAnswer(int qid) {
 		Connection con = null;

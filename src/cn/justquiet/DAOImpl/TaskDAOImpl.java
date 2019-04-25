@@ -16,6 +16,11 @@ import cn.justquiet.util.ConvertUtils;
 
 public class TaskDAOImpl implements TaskDAO{
 
+	/**
+	 * 根据班级查找其对应的编号
+	 * 
+	 * @param classname 班级名称
+	 */
 	@Override
 	public int executeQueryCidByClassname(String classname) {
 		Connection con = null;
@@ -39,6 +44,11 @@ public class TaskDAOImpl implements TaskDAO{
 		return cid;
 	}
 
+	/**
+	 * 根据作业码来查找并判断是否存在此任务
+	 * 
+	 * @param tkcodes 作业码
+	 */
 	@Override
 	public boolean executeQueryTkcodes(String tkcodes) {
 		Connection con = null;
@@ -60,6 +70,11 @@ public class TaskDAOImpl implements TaskDAO{
 		return false;
 	}
 
+	/**
+	 * 保存一个任务
+	 * 
+	 * @param task 任务bean类
+	 */
 	@Override
 	public boolean executeSetTask(Task task) {
 		Connection con = null;
@@ -91,6 +106,12 @@ public class TaskDAOImpl implements TaskDAO{
 		return false;
 	}
 
+	/**
+	 * 根据班级编号和完成状态来查找任务，使一个班分为完成作业和未完成作业的人
+	 * 
+	 * @param cid 班级编号
+	 * @param status 完成状态，1 已完成、2 未完成
+	 */
 	@Override
 	public List<Task> executeQueryTaskByCid(int cid, int status) {
 		List<Task> listtask = null;
@@ -139,7 +160,13 @@ public class TaskDAOImpl implements TaskDAO{
 		}
 		return listtask;
 	}
-
+	
+	/**
+	 * 此任务一旦截止，即根据任务编号更新任务状态
+	 * 
+	 * @param status 是否已截止，1 截止， 0 未截止
+	 * @param tkid 任务编号
+	 */
 	@Override
 	public boolean executeUpdateTaskStatus(int status, int tkid) {
 		Connection con = null;
@@ -160,6 +187,11 @@ public class TaskDAOImpl implements TaskDAO{
 		return false;
 	}
 
+	/**
+	 * 保存教师布置给班级的任务信息
+	 * 
+	 * @param check 任务bean类
+	 */
 	@Override
 	public boolean executeSetClassTask(Check check) {
 		Connection con = null;

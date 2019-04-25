@@ -14,39 +14,40 @@ import cn.justquiet.db.DBUtils;
 
 public class PersonDAOImpl implements PersonDAO{
 
+	/**
+	 * 判断学生用户名和密码是否正确，并返回相应准确的错误信息
+	 * （用数字表示返回结果，3 用户名和密码正确、2 密码错误、1 用户名错误、0 用户名和密码都错误）
+	 * 
+	 * @param id
+	 * @param password
+	 */
 	@SuppressWarnings("resource")
 	@Override
 	public int isStudent(String id, String password) {
 		int flag = 0;
 		Connection con = null;
 		String sql = "select * from tb_student where sid = '"+id+"' and spassword = '"+password+"'";
-//		PreparedStatement ptmt;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			con = DBConnection.getConnection();
 			stmt = con.createStatement();
-//			ptmt = con.prepareStatement(sql);
-//			ptmt.setString(1, id);
-//			ptmt.setString(2, password);
 			rs = stmt.executeQuery(sql);
-			if(rs!=null&&rs.next()) {
+			if(rs != null && rs.next()) {
 				flag = 3;
 				return flag;
 			}else {
 				sql = "select * from tb_student where sid = '"+id+"'";
 				stmt = con.prepareStatement(sql);
-//				ptmt.setString(1, id);
 				rs = stmt.executeQuery(sql);
-				if(rs!=null&&rs.next()) {
+				if(rs != null && rs.next()) {
 					flag = 2;
 					return flag;
 				}else {
 					sql = "select * from tb_student where spassword = '"+password+"'";
 					stmt = con.prepareStatement(sql);
-//					ptmt.setString(1, password);
 					rs = stmt.executeQuery(sql);
-					if(rs!=null&&rs.next()) {
+					if(rs != null && rs.next()) {
 						flag = 1;
 						return flag;
 					}
@@ -59,22 +60,25 @@ public class PersonDAOImpl implements PersonDAO{
 		}
 		return flag;
 	}
-
+	
+	/**
+	 * 判断教师用户名和密码是否正确，并返回相应准确的错误信息
+	 * （用数字表示返回结果，3 用户名和密码正确、2 密码错误、1 用户名错误、0 用户名和密码都错误）
+	 * 
+	 * @param id
+	 * @param password
+	 */
 	@SuppressWarnings("resource")
 	@Override
 	public int isTeacher(String id, String password) {
 		int flag = 0;
 		Connection con = null;
 		String sql = "select * from tb_teacher where taccount = '"+id+"' and tpassword = '"+password+"'";
-//		PreparedStatement ptmt;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			con = DBConnection.getConnection();
 			stmt = con.createStatement();
-//			ptmt = con.prepareStatement(sql);
-//			ptmt.setString(1, id);
-//			ptmt.setString(2, password);
 			rs = stmt.executeQuery(sql);
 			if(rs!=null&&rs.next()) {
 				flag = 3;
@@ -82,7 +86,6 @@ public class PersonDAOImpl implements PersonDAO{
 			}else {
 				sql = "select * from tb_teacher where taccount = '"+id+"'";
 				stmt = con.prepareStatement(sql);
-//				ptmt.setString(1, id);
 				rs = stmt.executeQuery(sql);
 				if(rs!=null&&rs.next()) {
 					flag = 2;
@@ -90,7 +93,6 @@ public class PersonDAOImpl implements PersonDAO{
 				}else {
 					sql = "select * from tb_teacher where tpassword = '"+password+"'";
 					stmt = con.prepareStatement(sql);
-//					ptmt.setString(1, password);
 					rs = stmt.executeQuery(sql);
 					if(rs!=null&&rs.next()) {
 						flag = 1;
@@ -107,18 +109,17 @@ public class PersonDAOImpl implements PersonDAO{
 	}
 	
 	
-	/***************************************************************************
-	 * 查询学生信息
+	/**
+	 * 根据学生id查询学生信息
 	 * 
-	 * @param sql
-	 *            数据库查询语句--查询指定学生信息
+	 * @param sql 数据库查询语句--查询指定学生信息
 	 * @return List 返回结果--List类型
 	 */
 	@Override
-	public List<Student> executeQueryStuById(String id) {
+	public List<Student> executeQueryStuById(String sid) {
 		List<Student> liststu = null;
 		Connection con = null;
-		String sql = "select * from tb_student where sid = '"+id+"'";
+		String sql = "select * from tb_student where sid = '"+sid+"'";
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
@@ -147,18 +148,17 @@ public class PersonDAOImpl implements PersonDAO{
 		return liststu;
 	}
 
-	/***************************************************************************
-	 * 查询教师信息
+	/**
+	 * 根据教师id查询教师信息
 	 * 
-	 * @param sql
-	 *            数据库查询语句--查询指定教师信息
+	 * @param sql 数据库查询语句--查询指定教师信息
 	 * @return List 返回结果--List类型
 	 */
 	@Override
-	public List<Teacher> executeQueryTeaById(String id) {
+	public List<Teacher> executeQueryTeaById(String tid) {
 		List<Teacher> listtea = null;
 		Connection con = null;
-		String sql = "select * from tb_teacher where taccount = '"+id+"'";
+		String sql = "select * from tb_teacher where taccount = '"+tid+"'";
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
@@ -187,6 +187,9 @@ public class PersonDAOImpl implements PersonDAO{
 		return listtea;
 	}
 
+	/**
+	 * 根据班级id查询所有学生信息
+	 */
 	@Override
 	public List<Student> executeQueryStuByCid(int cid) {
 		List<Student> liststu = null;

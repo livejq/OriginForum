@@ -17,6 +17,11 @@ import cn.justquiet.db.DBUtils;
 
 public class AnswerDAOImpl implements AnswerDAO{
 
+	/**
+	 * 根据问题id查询问题
+	 * 
+	 * @param qid 问题id
+	 */
 	@Override
 	public List<Answer> executeQueryAnsByQid(int qid) {
 		Connection con = null;
@@ -53,6 +58,11 @@ public class AnswerDAOImpl implements AnswerDAO{
 		return listans;
 	}
 
+	/**
+	 * 存储回答内容
+	 * 
+	 * @param answer 回答内容bean对象
+	 */
 	@Override
 	public boolean executeSetAnswer(Answer answer) {
 		Connection con = null;
