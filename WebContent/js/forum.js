@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	var oBlock = document.querySelectorAll('.c-blocks a');
 	var oDiv = document.querySelectorAll('.c-blocks a div');
 	function doMove(){
@@ -16,5 +16,5 @@ window.onload = function(){
 		}
 	}
 	doMove();
-}
+})
 

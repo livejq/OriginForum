@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	/*下拉列表*/
 	var oDshow = document.getElementById('drop-in-show');
 	var oH5 = oDshow.getElementsByTagName('h5');
@@ -15,4 +15,4 @@ window.onload = function(){
 		}
 	}
 	
-}
+})

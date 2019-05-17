@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	var btnAsk = document.getElementById('btnPublish');
 	var	inputTitle = document.getElementById('txtTitle');
 	var selectNull = document.getElementById('null');
@@ -8,7 +8,7 @@ window.onload = function(){
 			return false;
 		}
 	}
-}
+})
 
 		
 

@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	var btnSent = document.getElementById('btnSent');
 	var sentNull = document.getElementById('sentNull');
 	var uploadtk = document.getElementById('uploadtk');
@@ -42,4 +42,4 @@ window.onload = function(){
 	    		alert("您的文件大小已超过100MB!");
 	    	}
 	    },false);
-}
+})

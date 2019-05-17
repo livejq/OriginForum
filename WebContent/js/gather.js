@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 
 	/*10行星星*/
 	var oPf = document.querySelectorAll('.score');
@@ -76,7 +76,7 @@ window.onload = function(){
 			}
 		}
 	}
-}
+})
 
 function selectAll(){
 	var oTable = document.getElementById('send-list');

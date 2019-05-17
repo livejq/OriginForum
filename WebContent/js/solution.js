@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	var oBlock = document.querySelectorAll('#stay-time a');
 	var oStay = document.querySelector('.stay');
 	var index = 0;var lastindex = 0;
@@ -16,5 +16,5 @@ window.onload = function(){
 			
 		}
 	}
-}
+})
 

@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	 var oUl = document.getElementById('upload');
 		oUl.onchange = function(){
 			var oP = document.getElementById('fileName');
@@ -90,7 +90,7 @@ window.onload = function(){
     	}
     },false);
 
-}
+})
 /**
  * 
  * function addFile(){
